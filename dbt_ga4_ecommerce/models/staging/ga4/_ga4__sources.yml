@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: ga4_ecommerce
+    description: >
+      Public obfuscated Google Analytics 4 ecommerce sample dataset available in BigQuery.
+      This dataset emulates a real GA4 ecommerce export and is used as the raw source
+      for this analytics engineering portfolio project.
+    database: "{{ var('ga4_source_project') }}"
+    schema: "{{ var('ga4_source_dataset') }}"
+
+    tables:
+      - name: events
+        identifier: events_*
+        description: >
+          Daily GA4 ecommerce event export tables queried using a BigQuery wildcard table.
+          Each physical table follows the events_YYYYMMDD naming pattern.
+
+        columns:
+          - name: event_date
+            description: Event date in YYYYMMDD format.
+
+          - name: event_timestamp
+            description: Event timestamp in microseconds.
+
+          - name: event_name
+            description: Name of the GA4 event, such as page_view, view_item, add_to_cart, or purchase.
+
+          - name: user_pseudo_id
+            description: Pseudonymous identifier for the user.
+
+          - name: event_params
+            description: Repeated RECORD containing event-level parameters.
+
+          - name: user_properties
+            description: Repeated RECORD containing user-level properties.
+
+          - name: items
+            description: Repeated RECORD containing ecommerce item-level data.
