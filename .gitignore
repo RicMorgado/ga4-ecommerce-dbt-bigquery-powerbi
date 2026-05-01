@@ -1,0 +1,26 @@
+# dbt generated artifacts
+target/
+dbt_packages/
+dbt_modules/
+logs/
+
+# Python / local environments
+.venv/
+venv/
+__pycache__/
+
+# Environment variables and credentials
+.env
+*.json
+*.key
+*.pem
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+
+
