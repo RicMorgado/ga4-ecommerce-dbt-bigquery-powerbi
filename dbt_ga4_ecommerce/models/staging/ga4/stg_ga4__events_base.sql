@@ -27,8 +27,7 @@ with source_events as (
         device.language as device_language,
         device.web_info.browser as browser,
         device.web_info.browser_version as browser_version,
-        device.web_info.hostname as hostname,
-
+        event_dimensions.hostname as hostname,
         geo.continent as geo_continent,
         geo.country as geo_country,
         geo.region as geo_region,
